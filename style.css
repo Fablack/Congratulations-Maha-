@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #4a90e2; /* تغيير لون الخلفية إلى أزرق فاتح */
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-family: Arial, sans-serif; /* تغيير الخط */
+}
+
+@keyframes heart {
+    0% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes growShrink {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.heart span {
+    color: #ff1493; /* تغيير لون القلب إلى وردي */
+    font-size: 5vw;
+    transition: 0.5s;
+    animation: heart 0.9s alternate infinite, growShrink 1s infinite;
+    display: flex;
+    justify-content: center;
+}
+
+.message {
+    color: white;
+    font-size: 4vw;
+    text-align: center;
+    padding: 20px;
+    display: none;
+    animation: slideIn 1s ease-out forwards;
+}
